@@ -158,11 +158,11 @@ void deleteNodeIteratively(LinkedList * list, int value){
   while(curr->data != value && curr != 0) {
     prev = prev->next;
     curr = curr->next;
-    if(temp == 0){
-      return;
+    if(temp != 0){
+      temp = temp->next;
     }
-    temp = temp->next;
   }
+  
   delete curr;
   prev->next = temp;
   if(prev->next == 0){
